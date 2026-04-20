@@ -7,7 +7,7 @@
  * Muestra un tema específico con sus comentarios.
  * 
  * VULNERABILIDADES:
- * 1. SQL Injection en la consulta del tema por ID
+ * 1. SQL Injection en la consulta del tema por ID (SIN sanitizar)
  * 2. XSS Almacenado en los comentarios (mostrados sin sanitizar)
  * 
  * =====================================================
@@ -20,7 +20,7 @@ if (!isset($_GET['id'])) {
     exit;
 }
 
-$tema_id = intval($_GET['id']);
+$tema_id = $_GET['id'];  // SIN sanitizar - VULNERABLE A SQL INJECTION
 $conn = getConnection();
 
 $tema = null;

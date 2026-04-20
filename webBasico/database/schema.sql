@@ -10,8 +10,8 @@
 -- =====================================================
 
 -- Crear base de datos
-CREATE DATABASE IF NOT EXISTS security_lab;
-USE security_lab;
+CREATE DATABASE IF NOT EXISTS ucb;
+USE ucb;
 
 -- Tabla de usuarios
 -- NOTA: Esta tabla NO usa password_hash() por razones educativas
