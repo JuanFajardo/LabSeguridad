@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  web:
+    build: .  # Usa el Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - mariadb
+    volumes:
+      - ./webBasico:/var/www/html  # Montaje en vivo para desarrollo
+    networks:
+      - app-network
+
+  mariadb:
+    image: mariadb:10.11
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: ucb
+      MYSQL_USER: wendoline
+      MYSQL_PASSWORD: wendoline
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - app-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mariadb
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    ports:
+      - "8081:80"
+    depends_on:
+      - mariadb
+    networks:
+      - app-network
+
+volumes:
+  mariadb_data:
+
+networks:
+  app-network:

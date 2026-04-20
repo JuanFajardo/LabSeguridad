@@ -17,12 +17,12 @@
 
 // Configuración de la base de datos
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', ''); // XAMPP por defecto no tiene contraseña
-define('DB_NAME', 'security_lab');
+define('DB_USER', 'wendoline');
+define('DB_PASS', 'wendoline'); 
+define('DB_NAME', 'ucb');
 
 // Rutas del sistema
-define('BASE_PATH', '/security_lab/');
+define('BASE_PATH', '/');
 define('UPLOAD_DIR', __DIR__ . '/../uploads/');
 define('UPLOAD_URL', BASE_PATH . 'uploads/');
 
