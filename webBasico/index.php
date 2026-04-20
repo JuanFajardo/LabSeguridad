@@ -92,7 +92,7 @@ $conn->close();
     </main>
     
     <footer class="footer">
-        <p>Laboratorio de Seguridad Web - Con fines educativos &copy; <?php echo date('Y'); ?></p>
+        <p>Laboratorio de Seguridad Web - wendoline@pagina.edu.bo &copy; <?php echo date('Y'); ?></p>
     </footer>
 </body>
 </html>
